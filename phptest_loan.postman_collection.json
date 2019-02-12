@@ -1,0 +1,327 @@
+{
+	"variables": [],
+	"info": {
+		"name": "phptest_loan",
+		"_postman_id": "fdcaa50a-ea78-55a8-5db7-677c4bf3d258",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"description": "",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"url": "{{base}}/api/v1/user",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"GB\",\n  \"email\": \"gaurav.m.borkar@gmail.com\",\n  \"password\":\"password\",\n  \"nrc_address\":\"India\",\n  \"role_id\":\"bdf0c2d0-d8ed-11e8-9923-f3aee0bdea37\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "VerifyUser",
+					"request": {
+						"url": "{{base}}/api/v1/verify",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\":\"0d8f5300-2abd-11e9-8955-63b977949299\",\n\t\"token\":\"jeSc4Q0t\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"url": "{{base}}/api/v1/login",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"gaurav.m.borkar@gmail.com\",\n  \"password\":\"password\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Auth User",
+					"request": {
+						"url": "{{base}}/api/v1/auth/user",
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NDk1MzI4MDIsImV4cCI6MTU1NDcxNjgwMiwibmJmIjoxNTQ5NTMyODAyLCJqdGkiOiJ0NWFVekhuY0gxeTVlMEtSIiwic3ViIjoiMGQ4ZjUzMDAtMmFiZC0xMWU5LTg5NTUtNjNiOTc3OTQ5Mjk5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.AcfuqcwnbxlGzx1dIoiwnZipeMGXBM86WCRaWtNlopM",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMLHttpRequest",
+								"description": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"url": "{{base}}/api/v1/auth/logout",
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "LoanType",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Loan Type",
+					"request": {
+						"url": "{{base}}/api/v1/loanTypes",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "API Date Transform Helper",
+			"description": "",
+			"item": [
+				{
+					"name": "Epoch To Date",
+					"request": {
+						"url": "{{base}}/epochToDate/1539043200000",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Date To Epoch",
+					"request": {
+						"url": "{{base}}/dateToEpoch/2018-06-9",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Backend",
+			"description": "",
+			"item": [
+				{
+					"name": "Loan",
+					"description": "",
+					"item": [
+						{
+							"name": "Loan Verify from Admin Panel",
+							"request": {
+								"url": "{{base}}/backend/loanVerify/a696a130-2abd-11e9-a58b-e9967a498428",
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"description": ""
+							},
+							"response": []
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		},
+		{
+			"name": "Repayment",
+			"description": "",
+			"item": [
+				{
+					"name": "Make Repayment",
+					"request": {
+						"url": "{{base}}/api/v1/repayment/b6969890-2abd-11e9-bb18-25ac7af18f20",
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NDk1MzI4MDIsImV4cCI6MTU1NDcxNjgwMiwibmJmIjoxNTQ5NTMyODAyLCJqdGkiOiJ0NWFVekhuY0gxeTVlMEtSIiwic3ViIjoiMGQ4ZjUzMDAtMmFiZC0xMWU5LTg5NTUtNjNiOTc3OTQ5Mjk5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.AcfuqcwnbxlGzx1dIoiwnZipeMGXBM86WCRaWtNlopM",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"amount\": \"100\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loan",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Loan",
+					"request": {
+						"url": "{{base}}/api/v1/loan",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "X-Requested-With",
+								"value": "XMlHttpRequest",
+								"description": ""
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NDk1MzI4MDIsImV4cCI6MTU1NDcxNjgwMiwibmJmIjoxNTQ5NTMyODAyLCJqdGkiOiJ0NWFVekhuY0gxeTVlMEtSIiwic3ViIjoiMGQ4ZjUzMDAtMmFiZC0xMWU5LTg5NTUtNjNiOTc3OTQ5Mjk5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.AcfuqcwnbxlGzx1dIoiwnZipeMGXBM86WCRaWtNlopM",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"loan_amount\":\"1000\",\n\t\"duration\":1528502400000,\n\t\"repayment_frequency\": 3,\n\t\"interest_rate\": \"6\",\n\t\"arrangement_fees\": \"10\",\n\t\"loan_type_id\":\"25acddc0-2aa8-11e9-bf39-23a2b787428e\"\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Test API Work",
+			"request": {
+				"url": "{{base}}/api/v1/test-api",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get User Loan List",
+			"request": {
+				"url": "{{base}}/api/v1/getLoansForUser",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "X-Requested-With",
+						"value": "XMlHttpRequest",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC92MVwvbG9naW4iLCJpYXQiOjE1NDk1NDAzMDAsImV4cCI6MTU1NDcyNDMwMCwibmJmIjoxNTQ5NTQwMzAwLCJqdGkiOiJHQkp6NGdxanRyTkF5RlBCIiwic3ViIjoiMGQ4ZjUzMDAtMmFiZC0xMWU5LTg5NTUtNjNiOTc3OTQ5Mjk5IiwicHJ2IjoiMjNiZDVjODk0OWY2MDBhZGIzOWU3MDFjNDAwODcyZGI3YTU5NzZmNyJ9.57kDvuJ5R5bKouLzYhfdeVt2eZJHdOX5lNFmrGw-1oA",
+						"description": ""
+					},
+					{
+						"key": "",
+						"value": "",
+						"description": "",
+						"disabled": true
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
